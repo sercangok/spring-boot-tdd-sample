@@ -1,0 +1,22 @@
+spring:
+  logging:
+    level: debug
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:tddsample
+    username: tddsample
+    password: tddsample
+  jpa:
+    properties.hibernate.jdbc.lob.non_contextual_creation: true
+    #properties.hibernate.show_sql: true
+    #properties.hibernate.use_sql_comments: true
+    #properties.hibernate.format_sql: true
+    #properties.hibernate.type: trace
+    hibernate.ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+  application:
+    name: app
+  h2:
+    console.enabled: true
+server.servlet.context-path: /${spring.application.name}
